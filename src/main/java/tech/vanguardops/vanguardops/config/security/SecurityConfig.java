@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import tech.vanguardops.vanguardops.config.security.exceptionhandlers.CustomAccessDeniedHandler;
+import tech.vanguardops.vanguardops.config.security.exceptionhandlers.CustomAuthenticationEntryPoint;
 import tech.vanguardops.vanguardops.config.security.jwt.JwtToUserConverter;
 
 /**
@@ -39,7 +41,8 @@ public class SecurityConfig {
                         )
                 )
                 .exceptionHandling(ex -> ex
-                        .authenticationEntryPoint(new CustomAuthenticationEntryPoint()))
+                        .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
+                        .accessDeniedHandler(new CustomAccessDeniedHandler()))
                 .build();
     }
 
