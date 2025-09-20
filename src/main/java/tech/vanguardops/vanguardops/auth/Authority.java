@@ -11,6 +11,12 @@ import lombok.NoArgsConstructor;
 
 /**
  * Authority entity representing a role or permission in the system.
+ * Current Valid Authorities:
+ * - ROLE_ADMIN
+ * - ROLE_TECHNICIAN
+ * - ROLE_OPERATOR
+ * - ROLE_PLANNER
+ * - ROLE_ANALYST
  */
 @Entity
 @Table(name = "authorities")

@@ -3,12 +3,17 @@ package tech.vanguardops.vanguardops.auth;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import tech.vanguardops.vanguardops.auth.dto.LoginRequest;
+import tech.vanguardops.vanguardops.auth.dto.ManageUserRequest;
 import tech.vanguardops.vanguardops.auth.dto.SignupRequest;
 import tech.vanguardops.vanguardops.auth.dto.UserDTO;
 import tech.vanguardops.vanguardops.config.security.jwt.JwtService;
+
+import java.util.List;
 
 /**
  * Controller for authentication endpoints.
@@ -54,5 +59,29 @@ public class AuthControllerV1 {
         response.addCookie(jwtService.generateClearAuthCookie());
     }
 
+    @GetMapping("/users")
+    @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasAnyRole('ADMIN', 'PLANNER')")
+    public List<UserDTO> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+        return users.stream()
+                .map(userMapper::toDTO)
+                .toList();
+    }
 
+    @GetMapping("/users/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasAnyRole('ADMIN', 'PLANNER')")
+    public UserDTO getUserById(@PathVariable("id") String id) {
+        User user = userService.getUserById(id);
+        return userMapper.toDTO(user);
+    }
+
+    @PutMapping("/users/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
+    public UserDTO updateUser(@PathVariable("id") String id, @RequestBody @Valid ManageUserRequest manageUserRequest) {
+        User user = userService.updateUser(id, manageUserRequest);
+        return userMapper.toDTO(user);
+    }
 }
