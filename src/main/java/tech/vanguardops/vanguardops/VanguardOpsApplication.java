@@ -4,9 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import tech.vanguardops.vanguardops.config.AppProperties;
+import tech.vanguardops.vanguardops.config.security.jwt.JwtProperties;
 
 @SpringBootApplication
-@EnableConfigurationProperties({AppProperties.class})
+@EnableConfigurationProperties({AppProperties.class, JwtProperties.class})
 public class VanguardOpsApplication {
 
     static void main(String[] args) {
