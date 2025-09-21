@@ -74,11 +74,13 @@ public class UserServiceV1 implements UserService {
     }
 
     @Override
+    @Transactional
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
     @Override
+    @Transactional
     public User getUserById(String id) {
         return userRepository.findById(UUID.fromString(id))
                 .orElseThrow(() -> new UserNotFoundException("User not found."));
