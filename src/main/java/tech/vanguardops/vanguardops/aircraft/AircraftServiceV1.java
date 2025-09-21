@@ -57,6 +57,14 @@ public class AircraftServiceV1 implements AircraftService {
         aircraftRepository.deleteById(id);
     }
 
+    @Override
+    @Transactional
+    public Aircraft setStatus(Long id, AircraftStatus status) {
+        var aircraft = getById(id);
+        aircraft.setStatus(status);
+        return aircraftRepository.save(aircraft);
+    }
+
     /**
      * Validate that the tail number and serial number are unique.
      * @param tail the tail

@@ -37,4 +37,12 @@ public interface AircraftService {
      * @param id the id of the aircraft to delete
      */
     void delete(Long id);
+
+    /**
+     * Set the status of an aircraft
+     * @param id the id of the aircraft to update
+     * @param status the new status
+     * @return the updated aircraft
+     */
+    Aircraft setStatus(Long id, AircraftStatus status);
 }
