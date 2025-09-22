@@ -156,4 +156,9 @@ public class MaintenanceRuleServiceV1 implements MaintenanceRuleService {
         // Delete
         activeRuleRepository.deleteByAircraft_IdAndRule_Id(aircraftId, ruleId);
     }
+
+    @Override
+    public List<ActiveRule> getAllActiveRules() {
+        return activeRuleRepository.findAll();
+    }
 }

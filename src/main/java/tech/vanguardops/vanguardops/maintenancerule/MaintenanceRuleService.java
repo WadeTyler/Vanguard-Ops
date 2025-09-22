@@ -21,4 +21,5 @@ public interface MaintenanceRuleService {
     Page<ActiveRule> listActiveRules(Pageable pageable);
     ActiveRule activateRule(Long aircraftId, Long ruleId);
     void deactivateRule(Long aircraftId, Long ruleId);
+    List<ActiveRule> getAllActiveRules();
 }
