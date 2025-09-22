@@ -1,4 +1,4 @@
-package tech.vanguardops.vanguardops.maintenance.dto;
+package tech.vanguardops.vanguardops.maintenanceorder.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

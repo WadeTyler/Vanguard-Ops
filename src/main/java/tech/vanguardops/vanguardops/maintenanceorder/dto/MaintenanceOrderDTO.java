@@ -1,7 +1,7 @@
-package tech.vanguardops.vanguardops.maintenance.dto;
+package tech.vanguardops.vanguardops.maintenanceorder.dto;
 
 import tech.vanguardops.vanguardops.auth.dto.UserDTO;
-import tech.vanguardops.vanguardops.maintenance.OrderStatus;
+import tech.vanguardops.vanguardops.maintenanceorder.OrderStatus;
 
 import java.time.LocalDateTime;
 

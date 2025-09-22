@@ -1,4 +1,4 @@
-package tech.vanguardops.vanguardops.maintenance.exception;
+package tech.vanguardops.vanguardops.maintenanceorder.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

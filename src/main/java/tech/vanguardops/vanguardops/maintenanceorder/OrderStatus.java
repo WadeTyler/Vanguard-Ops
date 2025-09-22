@@ -1,4 +1,4 @@
-package tech.vanguardops.vanguardops.maintenance;
+package tech.vanguardops.vanguardops.maintenanceorder;
 
 public enum OrderStatus {
     OPEN,

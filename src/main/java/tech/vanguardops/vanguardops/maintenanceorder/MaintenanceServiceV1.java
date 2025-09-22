@@ -1,4 +1,4 @@
-package tech.vanguardops.vanguardops.maintenance;
+package tech.vanguardops.vanguardops.maintenanceorder;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
@@ -9,10 +9,10 @@ import tech.vanguardops.vanguardops.aircraft.Aircraft;
 import tech.vanguardops.vanguardops.aircraft.AircraftService;
 import tech.vanguardops.vanguardops.aircraft.AircraftStatus;
 import tech.vanguardops.vanguardops.auth.User;
-import tech.vanguardops.vanguardops.maintenance.dto.ManageOrderRequest;
-import tech.vanguardops.vanguardops.maintenance.exception.ExistingOrderException;
-import tech.vanguardops.vanguardops.maintenance.exception.MaintenaceOrderStatusChangeException;
-import tech.vanguardops.vanguardops.maintenance.exception.MaintenanceOrderNotFoundException;
+import tech.vanguardops.vanguardops.maintenanceorder.dto.ManageOrderRequest;
+import tech.vanguardops.vanguardops.maintenanceorder.exception.ExistingOrderException;
+import tech.vanguardops.vanguardops.maintenanceorder.exception.MaintenaceOrderStatusChangeException;
+import tech.vanguardops.vanguardops.maintenanceorder.exception.MaintenanceOrderNotFoundException;
 
 import java.time.LocalDateTime;
 
