@@ -20,9 +20,9 @@ import tech.vanguardops.vanguardops.maintenanceorder.dto.ManageOrderRequest;
 public class MaintenanceOrderController {
 
     private final MaintenanceService maintenanceService;
-    private final MaintenaceOrderMapper orderMapper;
+    private final MaintenanceOrderMapper orderMapper;
 
-    public MaintenanceOrderController(@Qualifier("maintenanceServiceV1") MaintenanceService maintenanceService, MaintenaceOrderMapper orderMapper) {
+    public MaintenanceOrderController(@Qualifier("maintenanceServiceV1") MaintenanceService maintenanceService, MaintenanceOrderMapper orderMapper) {
         this.maintenanceService = maintenanceService;
         this.orderMapper = orderMapper;
     }

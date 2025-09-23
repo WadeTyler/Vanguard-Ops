@@ -7,7 +7,7 @@ import tech.vanguardops.vanguardops.auth.UserMapper;
 import tech.vanguardops.vanguardops.maintenanceorder.dto.MaintenanceOrderDTO;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING, uses = UserMapper.class)
-public interface MaintenaceOrderMapper {
+public interface MaintenanceOrderMapper {
 
     @Mapping(source = "aircraft.id", target = "aircraftId")
     MaintenanceOrderDTO toDTO(MaintenanceOrder maintenanceOrder);
