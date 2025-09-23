@@ -32,6 +32,7 @@ public class SecurityConfig {
                 )
                 .addFilterBefore(new AuthTokenFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api-docs.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         .requestMatchers("/api/v*/auth/login", "/api/v*/auth/signup").permitAll()
                         .anyRequest().authenticated()
                 )

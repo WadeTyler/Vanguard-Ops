@@ -28,3 +28,8 @@ jwt:
 # Server Configuration
 server:
   port: 8080
+
+# Swagger Configuration
+springdoc:
+  swagger-ui:
+    path: /api-docs.html

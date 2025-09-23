@@ -1,4 +1,4 @@
-package tech.vanguardops.vanguardops.maintenance;
+package tech.vanguardops.vanguardops.maintenanceorder;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,8 +9,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import tech.vanguardops.vanguardops.auth.User;
-import tech.vanguardops.vanguardops.maintenance.dto.MaintenanceOrderDTO;
-import tech.vanguardops.vanguardops.maintenance.dto.ManageOrderRequest;
+import tech.vanguardops.vanguardops.maintenanceorder.dto.MaintenanceOrderDTO;
+import tech.vanguardops.vanguardops.maintenanceorder.dto.ManageOrderRequest;
 
 /**
  * REST controller for managing maintenance orders.
@@ -20,9 +20,9 @@ import tech.vanguardops.vanguardops.maintenance.dto.ManageOrderRequest;
 public class MaintenanceOrderController {
 
     private final MaintenanceService maintenanceService;
-    private final MaintenaceOrderMapper orderMapper;
+    private final MaintenanceOrderMapper orderMapper;
 
-    public MaintenanceOrderController(@Qualifier("maintenanceServiceV1") MaintenanceService maintenanceService, MaintenaceOrderMapper orderMapper) {
+    public MaintenanceOrderController(@Qualifier("maintenanceServiceV1") MaintenanceService maintenanceService, MaintenanceOrderMapper orderMapper) {
         this.maintenanceService = maintenanceService;
         this.orderMapper = orderMapper;
     }

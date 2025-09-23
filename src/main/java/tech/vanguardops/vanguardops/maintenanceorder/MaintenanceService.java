@@ -1,9 +1,9 @@
-package tech.vanguardops.vanguardops.maintenance;
+package tech.vanguardops.vanguardops.maintenanceorder;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import tech.vanguardops.vanguardops.auth.User;
-import tech.vanguardops.vanguardops.maintenance.dto.ManageOrderRequest;
+import tech.vanguardops.vanguardops.maintenanceorder.dto.ManageOrderRequest;
 
 /**
  * Service interface for managing maintenance orders.
